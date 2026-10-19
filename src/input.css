@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "animate.css";
+
+:root {
+  --campaign-lime: oklch(84.1% 0.238 128.85);
+  --campaign-purple: oklch(66.7% 0.295 322.15);
+  --campaign-black: #171717;
+  --campaign-white: #FFFFFF;
+}
+
+@theme {
+  --color-campaign-lime: oklch(84.1% 0.238 128.85);
+  --color-campaign-purple: oklch(66.7% 0.295 322.15);
+  --color-campaign-black: #171717;
+  --color-campaign-white: #FFFFFF;
+  --font-poster: 'Lalezar', cursive, sans-serif;
+  --font-body: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Campaign Styles & RTL Poster Dynamics */
+html {
+  scroll-behavior: smooth;
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--campaign-lime);
+  color: var(--campaign-black);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--campaign-lime);
+  color: var(--campaign-black);
+  direction: rtl;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-poster {
+  font-family: 'Lalezar', cursive, sans-serif;
+}
+
+.font-body {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Color utility aliases */
+.bg-campaign-lime {
+  background-color: var(--campaign-lime);
+}
+
+.bg-campaign-purple {
+  background-color: var(--campaign-purple);
+}
+
+.bg-campaign-black {
+  background-color: var(--campaign-black);
+}
+
+.bg-campaign-white {
+  background-color: var(--campaign-white);
+}
+
+.text-campaign-lime {
+  color: var(--campaign-lime);
+}
+
+.text-campaign-purple {
+  color: var(--campaign-purple);
+}
+
+.text-campaign-black {
+  color: var(--campaign-black);
+}
+
+.text-campaign-white {
+  color: var(--campaign-white);
+}
+
+.border-campaign-black {
+  border-color: var(--campaign-black);
+}
+
+.border-campaign-purple {
+  border-color: var(--campaign-purple);
+}
+
+.border-campaign-lime {
+  border-color: var(--campaign-lime);
+}
+
+/* Authentic Hand-drawn underline styling */
+.hand-drawn-underline {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hand-drawn-underline::after {
+  content: '';
+  position: absolute;
+  right: -3%;
+  left: -3%;
+  bottom: 0px;
+  height: 14px;
+  background-color: var(--campaign-purple);
+  transform: rotate(-1.5deg) skewX(-12deg);
+  border-radius: 4px;
+  z-index: -1;
+  box-shadow: 2px 2px 0px var(--campaign-black);
+}
+
+@media (min-width: 768px) {
+  .hand-drawn-underline::after {
+    height: 18px;
+    bottom: 2px;
+  }
+}
+
+/* Brutalist Offset Shadow Utility */
+.poster-shadow-black {
+  box-shadow: 5px 5px 0px var(--campaign-black);
+}
+
+.poster-shadow-black-lg {
+  box-shadow: 8px 8px 0px var(--campaign-black);
+}
+
+.poster-shadow-black-xl {
+  box-shadow: 12px 12px 0px var(--campaign-black);
+}
+
+.poster-shadow-purple {
+  box-shadow: 10px 10px 0px var(--campaign-purple);
+}
+
+.poster-shadow-purple-heavy {
+  box-shadow: 14px 14px 0px var(--campaign-purple), 14px 14px 0px 3px var(--campaign-black);
+}
+
+.poster-shadow-lime {
+  box-shadow: 6px 6px 0px var(--campaign-lime);
+}
+
+/* Starburst Shape with CSS clip-path */
+.starburst-badge {
+  clip-path: polygon(
+    50% 0%, 63% 15%, 81% 6%, 85% 25%, 100% 35%, 92% 52%, 99% 70%, 82% 78%, 79% 97%, 60% 90%, 48% 100%, 35% 88%, 18% 95%, 17% 76%, 1% 67%, 9% 50%, 0% 33%, 17% 24%, 18% 5%, 36% 14%
+  );
+}
+
+/* Diagonal stripe tape styling */
+.tape-strip {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--campaign-black),
+    var(--campaign-black) 10px,
+    var(--campaign-lime) 10px,
+    var(--campaign-lime) 20px
+  );
+}
+
+/* Subtle Slow Floating Movement */
+@keyframes campaign-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
+.animate-campaign-float {
+  animation: campaign-float 5s ease-in-out infinite;
+}
+
+@keyframes campaign-float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(4deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-campaign-float-reverse {
+  animation: campaign-float-reverse 6s ease-in-out infinite;
+}
+
+/* Pulse badge */
+@keyframes subtle-scale {
+  0%, 100% {
+    transform: scale(1) rotate(3deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+}
+
+.animate-subtle-scale {
+  animation: subtle-scale 3.5s ease-in-out infinite;
+}
+
+
+/* Animation Delays for Animate.css */
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
